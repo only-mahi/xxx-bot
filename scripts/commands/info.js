@@ -1,8 +1,12 @@
+const fs = require("fs");
+const moment = require("moment-timezone");
+const request = require("request");
+
 module.exports.config = {
-    name: "admin",
+    name: "info",
     version: "1.0.0",
     permission: 0,
-    credits: "nayan",
+    credits: "MAHI",
     prefix: true,
     description: "",
     category: "prefix",
@@ -15,33 +19,104 @@ module.exports.config = {
     "axios":""
   }
 };
-module.exports.run = async function({ api,event,args,client,Users,Threads,__GLOBAL,Currencies }) {
-const axios = global.nodemodule["axios"];
-const request = global.nodemodule["request"];
-const fs = global.nodemodule["fs-extra"];
-const time = process.uptime(),
-		hours = Math.floor(time / (60 * 60)),
-		minutes = Math.floor((time % (60 * 60)) / 60),
-		seconds = Math.floor(time % 60);
-const moment = require("moment-timezone");
-var juswa = moment.tz("Asia/Dhaka").format("『D/MM/YYYY』 【hh:mm:ss】");
-  
-var callback = () => api.sendMessage({body:`
---------------------------------------------
-𝐍𝐚𝐦𝐞       :𝐒𝐎𝐇𝐀𝐆 𝐊𝐇𝐀𝐍
-𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤 : 𝐒𝐎𝐇𝐀𝐆 𝐊𝐇𝐀𝐍
-𝐑𝐞𝐥𝐢𝐠𝐢𝐨𝐧   : 𝐈𝐬𝐥𝐚𝐦
-𝐏𝐞𝐫𝐦𝐚𝐧𝐞𝐧𝐭 𝐀𝐝𝐝𝐫𝐞𝐬𝐬: 𝐆𝐚𝐳𝐢𝐩𝐮𝐫, 𝐃𝐡𝐚𝐤𝐚
-𝐂𝐮𝐫𝐫𝐞𝐧𝐭 𝐀𝐝𝐝𝐫𝐞𝐬𝐬: 𝐃𝐡𝐚𝐤𝐚 𝐆𝐚𝐳𝐢𝐩𝐮𝐫 𝐊𝐚𝐩𝐚𝐬𝐢𝐚
-𝐆𝐞𝐧𝐝𝐞𝐫.   : 𝐌𝐚𝐥𝐞
-𝐀𝐠𝐞           : 𝟏𝟖+
-𝐑𝐞𝐥𝐚𝐭𝐢𝐨𝐧𝐬𝐡𝐢𝐩 : 𝐒𝐢𝐧𝐠𝐥𝐞
-𝐖𝐨𝐫𝐤        : 𝐒𝐭𝐮𝐝𝐞𝐧𝐭
-𝐆𝐦𝐚𝐢𝐥       : mdsohagkhan34562@gmail.com
-𝐖𝐡𝐚𝐭𝐬𝐀𝐩𝐩: wa.me/+8801815397046
-𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦  : t.me/sohagkhan422
-𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤 𝐋𝐢𝐧𝐤 : https://www.facebook.com/cexvideo`,attachment: fs.createReadStream(__dirname + "/cache/1.png")}, event.threadID, () => 
-    fs.unlinkSync(__dirname + "/cache/1.png"));  
-      return request(encodeURI(`https://graph.facebook.com/61552819703988/picture?height=720&width=720&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`)).pipe(
-fs.createWriteStream(__dirname+'/cache/1.png')).on('close',() => callback());
-   };
+
+module.exports.run = async function({ api, event, args, prefix, admin }) {
+		let time = process.uptime();
+		let years = Math.floor(time / (60 * 60 * 24 * 365));
+		let months = Math.floor((time % (60 * 60 * 24 * 365)) / (60 * 60 * 24 * 30));
+		let days = Math.floor((time % (60 * 60 * 24 * 30)) / (60 * 60 * 24));
+		let weeks = Math.floor(days / 7);
+		let hours = Math.floor((time % (60 * 60 * 24)) / (60 * 60));
+		let minutes = Math.floor((time % (60 * 60)) / 60);
+		let seconds = Math.floor(time % 60);
+		const uptimeString = `${years > 0 ? `${years} years ` : ''}${months > 0 ? `${months} months ` : ''}${weeks > 0 ? `${weeks} weeks ` : ''}${days % 7 > 0 ? `${days % 7} days ` : ''}${hours > 0 ? `${hours} hours ` : ''}${minutes > 0 ? `${minutes} minutes ` : ''}${seconds} seconds`;
+
+		const CREATORLINK = "https://www.facebook.com/mahitsuyiyi?mibextid";
+		const BOTCREATOR = "MOHAMMAD MAHI";
+		const BOTNAME = "MAHI-BOT";
+		const FILESOWNER = "MAHI KHAN";
+		const juswa = moment.tz("Asia/Manila").format("『D/MM/YYYY』 【HH:mm:ss】");
+		const link = ["https://i.imgur.com/CmbFKU7.mp4", "https://i.imgur.com/9hhDasP.mp4", "https://i.imgur.com/dbcIeV2.mp4", "https://i.imgur.com/dbcIeV2.mp4", "https://i.imgur.com/CmbFKU7.mp4", "https://i.imgur.com/CmbFKU7.mp4", "https://i.imgur.com/9hhDasP.mp4", "https://i.imgur.com/dbcIeV2.mp4", "https://i.imgur.com/cBnfSTe.mp4", "https://i.imgur.com/ZwKpFsF.mp4", "https://i.imgur.com/CmbFKU7.mp4",
+"https://i.imgur.com/9hhDasP.mp4",
+										"https://i.imgur.com/9hhDasP.mp4",
+										"https://i.imgur.com/dbcIeV2.mp4",
+										"https://i.imgur.com/cBnfSTe.mp4",
+										"https://i.imgur.com/dbcIeV2.mp4",
+										"https://i.imgur.com/cBnfSTe.mp4",
+										"https://i.imgur.com/ZwKpFsF.mp4",
+										"https://i.imgur.com/dbcIeV2.mp4",
+										"https://i.imgur.com/9hhDasP.mp4",
+										"https://i.imgur.com/dbcIeV2.mp4",
+										"https://i.imgur.com/cBnfSTe.mp4",
+										"https://i.imgur.com/ZwKpFsF.mp4",
+										"https://i.imgur.com/9hhDasP.mp4",
+										"https://i.imgur.com/9hhDasP.mp4",
+										"https://i.imgur.com/CmbFKU7.mp4",
+										"https://i.imgur.com/ZwKpFsF.mp4",
+										"https://i.imgur.com/CmbFKU7.mp4",
+										"https://i.imgur.com/9hhDasP.mp4",
+										"https://i.imgur.com/dbcIeV2.mp4",
+										"https://i.imgur.com/9hhDasP.mp4",
+										"https://i.imgur.com/ZwKpFsF.mp4",
+										"https://i.imgur.com/CmbFKU7.mp4",
+										"https://i.imgur.com/ZwKpFsF.mp4",
+										"https://i.imgur.com/CmbFKU7.mp4",
+										"https://i.imgur.com/9hhDasP.mp4",
+										"https://i.imgur.com/dbcIeV2.mp4",
+										"https://i.imgur.com/dbcIeV2.mp4",
+										"https://i.imgur.com/ZwKpFsF.mp4",
+										"https://i.imgur.com/CmbFKU7.mp4",
+										"https://i.imgur.com/ZwKpFsF.mp4",
+										"https://i.imgur.com/CmbFKU7.mp4",
+										"https://i.imgur.com/CmbFKU7.mp4",
+										"https://i.imgur.com/dbcIeV2.mp4",
+										"https://i.imgur.com/9hhDasP.mp4",
+										"https://i.imgur.com/dbcIeV2.mp4",
+										"https://i.imgur.com/9hhDasP.mp4",
+										"https://i.imgur.com/CmbFKU7.mp4",
+										"https://i.imgur.com/dbcIeV2.mp4",
+										"https://i.imgur.com/ZwKpFsF.mp4",
+										"https://i.imgur.com/9hhDasP.mp4",
+										"https://i.imgur.com/9hhDasP.mp4",
+										"https://i.imgur.com/Pcr3VC3.mp4",
+										"https://i.imgur.com/Pcr3VC3.mp4",
+										"https://i.imgur.com/Pcr3VC3.mp4",
+										"https://i.imgur.com/Pcr3VC3.mp4",
+										"https://i.imgur.com/Pcr3VC3.mp4",
+										"https://i.imgur.com/Pcr3VC3.mp4",
+"https://i.imgur.com/Pcr3VC3.mp4"
+								 ];
+
+		const callback = () => {
+				api.sendMessage({
+						body: `➢ Admin and Bot Information
+
+⁂ Bot Name: ${BOTNAME}
+
+✧ Bot Admin: ${admin}
+
+♛ Bot Admin Link: https://www.facebook.com/${admin}
+
+❂ Bot Prefix: ${prefix}
+
+✫ Files Owner: ${FILESOWNER}
+
+➟ UPTIME ${uptimeString}
+
+✬ Today is: ${juswa} 
+
+➳ Bot is running ${hours}:${minutes}:${seconds}.
+✫ Thanks for using my bot`,
+						attachment: fs.createReadStream(__dirname + "/cache/owner_video.mp4")
+				}, event.threadID, () => fs.unlinkSync(__dirname + "/cache/owner_video.mp4"));
+		};
+
+		const linkIndex = Math.floor(Math.random() * link.length);
+		request(encodeURI(link[linkIndex]))
+				.on('error', (err) => {
+						console.error('Error downloading video:', err);
+						api.sendMessage('An error occurred while processing the command.', event.threadID, null, event.messageID);
+				})
+				.pipe(fs.createWriteStream(__dirname + "/cache/owner_video.mp4")). 
+				.on("close", callback);
+};
