@@ -2,19 +2,16 @@ const axios = require('axios');
 const jimp = require("jimp");
 const fs = require("fs");
 module.exports.config = {
-  name: "help",
-  version: "1.0.2",
-  permission: 0,
-  credits: "MAHI",
-  description: "beginner's guide",
-  prefix: true,
-  category: "guide",
-  usages: "[Shows Commands]",
-  cooldowns: 5,
-  envConfig: {
-    autoUnsend: true,
-    delayUnsend: 60
-  }
+	name: 'help',
+	version: '1.0.0',
+	premission: 0,
+	role: 0,
+	Prefix: false,
+	category: "guide"
+	aliases: ['help'],
+	description: "Beginner's guide",
+	usage: "Help [page] or [command]",
+	credits: 'Develeoper',
 };
 
 module.exports.run = async function ({
