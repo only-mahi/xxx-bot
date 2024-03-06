@@ -38,7 +38,7 @@ module.exports.handleEvent = function ({ api, event, getText }) {
   return api.sendMessage(getText("moduleInfo", command.config.name, command.config.description, `${prefix}${command.config.name} ${(command.config.usages) ? command.config.usages : ""}`, command.config.commandCategory, command.config.cooldowns, ((command.config.hasPermission == 0) ? getText("user") : (command.config.hasPermission == 1) ? getText("adminGroup") : getText("adminBot")), command.config.credits), threadID, messageID);
 };
 
-module.exports.👾run = async function ({ api, event, args }) {
+module.exports.run = async function ({ api, event, args }) {
   const uid = event.senderID;
   const userName = (await api.getUserInfo(uid))[uid].name;
 
