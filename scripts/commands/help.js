@@ -91,6 +91,33 @@ module.exports.run = async function ({ api, event, args }) {
     "A baby puffin is called a puffling.",
     "A jiffy is an actual unit of time: 1/100th of a second.",
     "The word 'nerd' was first coined by Dr. Seuss in 'If I Ran the Zoo'.",
+module.exports.config = {
+
+  }
+
+
+  const randomQuotes = [
+  "Octopuses have three hearts: two pump blood to the gills, and one pumps it to the rest of the body.",
+    "Honey never spoils; archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old.",
+    "The world's oldest known recipe is for beer.",
+    "Bananas are berries, but strawberries are not.",
+    "Cows have best friends and can become stressed when they are separated.",
+    "The shortest war in history was between Britain and Zanzibar on August 27, 1896; Zanzibar surrendered after 38 minutes.",
+    "The average person walks the equivalent of three times around the world in a lifetime.",
+    "Polar bears are left-handed.",
+        "The unicorn is Scotland's national animal.",
+    "A group of flamingos is called a 'flamboyance'.",
+    "There are more possible iterations of a game of chess than there are atoms in the known universe.",
+    "The smell of freshly-cut grass is actually a plant distress call.",
+    "A day on Venus is longer than its year.",
+    "Honeybees can recognize human faces.",
+    "Wombat poop is cube-shaped.",
+    "The first oranges weren't orange.",
+    "The longest time between two twins being born is 87 days.",
+    "A bolt of lightning is six times hotter than the sun.",
+    "A baby puffin is called a puffling.",
+    "A jiffy is an actual unit of time: 1/100th of a second.",
+    "The word 'nerd' was first coined by Dr. Seuss in 'If I Ran the Zoo'.",
     "There's a species of jellyfish that is biologically immortal.",
     "The Eiffel Tower can be 6 inches taller during the summer due to the expansion of the iron.",
     "The Earth is not a perfect sphere; it's slightly flattened at the poles and bulging at the equator.",
@@ -117,9 +144,13 @@ module.exports.run = async function ({ api, event, args }) {
     "Wombat poop is cube-shaped."
   ];
 
+
   const randomQuote = randomQuotes[Math.floor(Math.random() * randomQuotes.length)];
 
+
   msg += `├─────☾⋆\n│ » Total commands: [ ${commands.size} ]\n│「 ☾⋆ PREFIX: ${global.config.PREFIX} 」\n╰──────────⧕\n\n𝗥𝗔𝗡𝗗𝗢𝗠 𝗙𝗔𝗖𝗧: ${randomQuote}\n\nOwner: 𝐀𝐒𝐈𝐅 𝐱𝟔𝟗`;
+
+
 
 
   return api.sendMessage(msg, threadID, async (error, info) => {
