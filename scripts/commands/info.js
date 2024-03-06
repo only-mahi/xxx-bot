@@ -25,18 +25,18 @@ const time = process.uptime(),
 		seconds = Math.floor(time % 60);
 const moment = require("moment-timezone");
 var juswa = moment.tz("Asia/Manila").format("『D/MM/YYYY』 【HH:mm:ss】");
-var link = ["https://i.postimg.cc/rmH06yjg/cid-kagenou-vinz-1.jpg", "https://i.postimg.cc/Xq0ZN1My/Kagenou-Cid-1.jpg", "https://i.postimg.cc/2yzzXsRT/image.jpg", "https://i.postimg.cc/Kvw616qV/630193b1-89cf-4d48-87e7-29d405778dc9.jpg", "https://i.postimg.cc/HWPKKGgx/Cid-Kageno-The-Eminence-in-Shadow-Aesthetic.jpg", "https://i.postimg.cc/bJwCCgVk/Cid-Kagenou.jpg", "https://i.postimg.cc/fyBBx9f5/image.jpg", "https://i.postimg.cc/Kz5N2MwF/cid-kagenou-vinz-2.jpg"];
+var link = ["https://i.imgur.com/y834Vyh.jpeg", "https://i.imgur.com/y834Vyh.jpeg", "https://i.imgur.com/y834Vyh.jpeg", "https://i.imgur.com/y834Vyh.jpeg", "https://i.imgur.com/y834Vyh.jpeg", "https://i.imgur.com/i2CtWxX.jpeg", "https://i.imgur.com/i2CtWxX.jpeg", "https://i.imgur.com/i2CtWxX.jpeg"];
 var callback = () => api.sendMessage({body:`➢ Admin and Bot Information
 
 ⁂ Bot Name: ${global.config.BOTNAME}
 
-✧ Bot Admin: ${global.config.BOTCREATOR}
+✧ Bot Admin: 61557026699388
 
-♛ Bot Admin Link: ${global.config.CREATORLINK}
+♛ Bot Admin Link: https://www.facebook.com/mahitsuyiyi
 
 ❂ Bot Prefix: ${global.config.PREFIX}
 
-✫ Bot Owner: ${global.config.BOTOWNER}
+✫ Bot Owner: 𝐀𝐃𝐈 𝐔𝐅𝐓𝐀 𝐌𝐀𝐇𝐈
 
 ➟ UPTIME
 
