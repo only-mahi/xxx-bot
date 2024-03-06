@@ -24,118 +24,26 @@ const time = process.uptime(),
 		minutes = Math.floor((time % (60 * 60)) / 60),
 		seconds = Math.floor(time % 60);
 const moment = require("moment-timezone");
-const fs = require("fs");
-const moment = require("moment-timezone");
-const request = require("request");
+var juswa = moment.tz("Asia/Manila").format("『D/MM/YYYY』 【HH:mm:ss】");
+var link = ["https://i.postimg.cc/rmH06yjg/cid-kagenou-vinz-1.jpg", "https://i.postimg.cc/Xq0ZN1My/Kagenou-Cid-1.jpg", "https://i.postimg.cc/2yzzXsRT/image.jpg", "https://i.postimg.cc/Kvw616qV/630193b1-89cf-4d48-87e7-29d405778dc9.jpg", "https://i.postimg.cc/HWPKKGgx/Cid-Kageno-The-Eminence-in-Shadow-Aesthetic.jpg", "https://i.postimg.cc/bJwCCgVk/Cid-Kagenou.jpg", "https://i.postimg.cc/fyBBx9f5/image.jpg", "https://i.postimg.cc/Kz5N2MwF/cid-kagenou-vinz-2.jpg"];
+var callback = () => api.sendMessage({body:`➢ Admin and Bot Information
 
-module.exports.config = {
-		name: "info",
-		version: "1.0.1",
-		aliases: ["info", "Info", "in", "fo"],
-		role: 0,
-		credits: "MAHI KHAN",
-		description: "Admin and Bot info.",
-		cooldown: 5,
-		hasPrefix: true,
-};
+⁂ Bot Name: ${global.config.BOTNAME}
 
-module.exports.run = async function({ api, event, args, prefix, admin }) {
-		let time = process.uptime();
-		let years = Math.floor(time / (60 * 60 * 24 * 365));
-		let months = Math.floor((time % (60 * 60 * 24 * 365)) / (60 * 60 * 24 * 30));
-		let days = Math.floor((time % (60 * 60 * 24 * 30)) / (60 * 60 * 24));
-		let weeks = Math.floor(days / 7);
-		let hours = Math.floor((time % (60 * 60 * 24)) / (60 * 60));
-		let minutes = Math.floor((time % (60 * 60)) / 60);
-		let seconds = Math.floor(time % 60);
-		const uptimeString = `${years > 0 ? `${years} years ` : ''}${months > 0 ? `${months} months ` : ''}${weeks > 0 ? `${weeks} weeks ` : ''}${days % 7 > 0 ? `${days % 7} days ` : ''}${hours > 0 ? `${hours} hours ` : ''}${minutes > 0 ? `${minutes} minutes ` : ''}${seconds} seconds`;
+✧ Bot Admin: ${global.config.BOTCREATOR}
 
-		const CREATORLINK = "https://www.facebook.com/mahitsuyiyi?mibextid";
-		const BOTCREATOR = "MOHAMMAD MAHI";
-		const BOTNAME = "MAHI-BOT";
-		const FILESOWNER = "MAHI KHAN";
-		const juswa = moment.tz("Asia/Manila").format("『D/MM/YYYY』 【HH:mm:ss】");
-		const link = ["https://i.imgur.com/CmbFKU7.mp4", "https://i.imgur.com/9hhDasP.mp4", "https://i.imgur.com/dbcIeV2.mp4", "https://i.imgur.com/dbcIeV2.mp4", "https://i.imgur.com/CmbFKU7.mp4", "https://i.imgur.com/CmbFKU7.mp4", "https://i.imgur.com/9hhDasP.mp4", "https://i.imgur.com/dbcIeV2.mp4", "https://i.imgur.com/cBnfSTe.mp4", "https://i.imgur.com/ZwKpFsF.mp4", "https://i.imgur.com/CmbFKU7.mp4",
-"https://i.imgur.com/9hhDasP.mp4",
-										"https://i.imgur.com/9hhDasP.mp4",
-										"https://i.imgur.com/dbcIeV2.mp4",
-										"https://i.imgur.com/cBnfSTe.mp4",
-										"https://i.imgur.com/dbcIeV2.mp4",
-										"https://i.imgur.com/cBnfSTe.mp4",
-										"https://i.imgur.com/ZwKpFsF.mp4",
-										"https://i.imgur.com/dbcIeV2.mp4",
-										"https://i.imgur.com/9hhDasP.mp4",
-										"https://i.imgur.com/dbcIeV2.mp4",
-										"https://i.imgur.com/cBnfSTe.mp4",
-										"https://i.imgur.com/ZwKpFsF.mp4",
-										"https://i.imgur.com/9hhDasP.mp4",
-										"https://i.imgur.com/9hhDasP.mp4",
-										"https://i.imgur.com/CmbFKU7.mp4",
-										"https://i.imgur.com/ZwKpFsF.mp4",
-										"https://i.imgur.com/CmbFKU7.mp4",
-										"https://i.imgur.com/9hhDasP.mp4",
-										"https://i.imgur.com/dbcIeV2.mp4",
-										"https://i.imgur.com/9hhDasP.mp4",
-										"https://i.imgur.com/ZwKpFsF.mp4",
-										"https://i.imgur.com/CmbFKU7.mp4",
-										"https://i.imgur.com/ZwKpFsF.mp4",
-										"https://i.imgur.com/CmbFKU7.mp4",
-										"https://i.imgur.com/9hhDasP.mp4",
-										"https://i.imgur.com/dbcIeV2.mp4",
-										"https://i.imgur.com/dbcIeV2.mp4",
-										"https://i.imgur.com/ZwKpFsF.mp4",
-										"https://i.imgur.com/CmbFKU7.mp4",
-										"https://i.imgur.com/ZwKpFsF.mp4",
-										"https://i.imgur.com/CmbFKU7.mp4",
-										"https://i.imgur.com/CmbFKU7.mp4",
-										"https://i.imgur.com/dbcIeV2.mp4",
-										"https://i.imgur.com/9hhDasP.mp4",
-										"https://i.imgur.com/dbcIeV2.mp4",
-										"https://i.imgur.com/9hhDasP.mp4",
-										"https://i.imgur.com/CmbFKU7.mp4",
-										"https://i.imgur.com/dbcIeV2.mp4",
-										"https://i.imgur.com/ZwKpFsF.mp4",
-										"https://i.imgur.com/9hhDasP.mp4",
-										"https://i.imgur.com/9hhDasP.mp4",
-										"https://i.imgur.com/Pcr3VC3.mp4",
-										"https://i.imgur.com/Pcr3VC3.mp4",
-										"https://i.imgur.com/Pcr3VC3.mp4",
-										"https://i.imgur.com/Pcr3VC3.mp4",
-										"https://i.imgur.com/Pcr3VC3.mp4",
-										"https://i.imgur.com/Pcr3VC3.mp4",
-"https://i.imgur.com/Pcr3VC3.mp4"
-								 ];
+♛ Bot Admin Link: ${global.config.CREATORLINK}
 
-		const callback = () => {
-				api.sendMessage({
-						body: `➢ Admin and Bot Information
+❂ Bot Prefix: ${global.config.PREFIX}
 
-⁂ Bot Name: ${BOTNAME}
+✫ Bot Owner: ${global.config.BOTOWNER}
 
-✧ Bot Admin: ${admin}
-
-♛ Bot Admin Link: https://www.facebook.com/${admin}
-
-❂ Bot Prefix: ${prefix}
-
-✫ Files Owner: ${FILESOWNER}
-
-➟ UPTIME ${uptimeString}
+➟ UPTIME
 
 ✬ Today is: ${juswa} 
 
 ➳ Bot is running ${hours}:${minutes}:${seconds}.
-✫ Thanks for using my bot`,
-						attachment: fs.createReadStream(__dirname + "/cache/owner_video.mp4")
-				}, event.threadID, () => fs.unlinkSync(__dirname + "/cache/owner_video.mp4"));
-		};
 
-		const linkIndex = Math.floor(Math.random() * link.length);
-		request(encodeURI(link[linkIndex]))
-				.on('error', (err) => {
-						console.error('Error downloading video:', err);
-						api.sendMessage('An error occurred while processing the command.', event.threadID, null, event.messageID);
-				})
-				.pipe(fs.createWriteStream(__dirname + "/cache/owner_video.mp4")). 
-				.on("close", callback);
-};
+✫ Thanks for using ${global.config.BOTNAME} Bot!`,attachment: fs.createReadStream(__dirname + "/cache/juswa.jpg")}, event.threadID, () => fs.unlinkSync(__dirname + "/cache/juswa.jpg")); 
+      return request(encodeURI(link[Math.floor(Math.random() * link.length)])).pipe(fs.createWriteStream(__dirname+"/cache/juswa.jpg")).on("close",() => callback());
+   };
