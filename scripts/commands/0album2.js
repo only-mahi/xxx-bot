@@ -1,17 +1,14 @@
 module.exports.config = {
   name: "album2",
-  version: "1.0.3",
-  hasPermssion: 0,
-  credits: "Shaon Ahmed",
-  prefix: true,
-  description: "Random video",
-  Category: "short video",
+  version: "2.0.0",
+  permission: 0,
+  credits: "MAHI",
+  description: "Displays album options for selection.",
+  prefix: false,
+  category: "Media",
+  usages: "Only or add [cartoon/photo/lofi/sad/islamic/funny/horny/anime/aesthetic/cat/lyrics/love/sigma]",
   cooldowns: 5,
-  dependencies: {
-    axios: ""
-  }
-}, module.exports.run = async function({
-  event: e,
+}; module.exports.run = async function({  event: e,
   api: a,
   args: n
 }) {
