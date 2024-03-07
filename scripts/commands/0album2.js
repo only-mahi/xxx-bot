@@ -4,7 +4,7 @@ module.exports.config = {
   permission: 0,
   credits: "MAHI",
   description: "Displays album options for selection.",
-  prefix: false,
+  prefix: true,
   category: "Media",
   usages: "Only or add [cartoon/photo/lofi/sad/islamic/funny/horny/anime/aesthetic/cat/lyrics/love/sigma]",
   cooldowns: 5,
@@ -47,35 +47,35 @@ module.exports.config = {
   function linkanh() {
         const p = require("axios");
         if ("1" == a.body)
-            var h = "https://shaon-all-api-07mo.onrender.com/video/islam";
+            var h = "https://noobs-apihouse.onrender.com/dipto/album/islam";
         else if ("2" == a.body)
-         var   h = "https://shaon-all-api-07mo.onrender.com/video/anime";
+         var   h = "https://noobs-apihouse.onrender.com/dipto/album/anime";
         else if ("3" == a.body)
-         var   h = "https://shaon-all-api-07mo.onrender.com/video/shairi";
+         var   h = "https://noobs-apihouse.onrender.com/dipto/album/shairi";
         else if ("4" == a.body)
-          var  h = "https://shaon-all-api-07mo.onrender.com/video/short";
+          var  h = "https://noobs-apihouse.onrender.com/dipto/album/short";
         else if ("5" == a.body)
-          var  h = "https://shaon-all-api-07mo.onrender.com/video/sad";
+          var  h = "https://noobs-apihouse.onrender.com/dipto/album/sad";
         else if ("6" == a.body)
-          var  h = "https://shaon-all-api-07mo.onrender.com/video/status";
+          var  h = "https://noobs-apihouse.onrender.com/dipto/album/status";
         else if ("7" == a.body)
-          var  h = "https://shaon-all-api-07mo.onrender.com/video/football";
+          var  h = "https://noobs-apihouse.onrender.com/dipto/album/football";
         else if ("8" == a.body)
-          var  h = "https://shaon-all-api-07mo.onrender.com/video/funny";
+          var  h = "https://noobs-apihouse.onrender.com/dipto/album/funny";
         else if ("9" == a.body)
-         var   h = "https://shaon-all-api-07mo.onrender.com/video/love";
+         var   h = "https://noobs-apihouse.onrender.com/dipto/album/love";
         else if ("10" == a.body)
-         var  h = "https://shaon-all-api-07mo.onrender.com/video/cpl";
+         var  h = "https://noobs-apihouse.onrender.com/dipto/album/cpl";
           else if ("11" == a.body)
-           var  h = "https://shaon-all-api-07mo.onrender.com/video/baby";
+           var  h = "https://noobs-apihouse.onrender.com/dipto/album/baby";
           else if ("12" == a.body)
-          var  h = "https://shaon-all-api-07mo.onrender.com/video/kosto";
+          var  h = "https://noobs-apihouse.onrender.com/dipto/album/kosto";
          else if ("13" == a.body)
-         var  h = "https://shaon-all-api-07mo.onrender.com/video/lofi";
+         var  h = "https://noobs-apihouse.onrender.com/dipto/album/lofi";
          else if ("14" == a.body)
-         var  h = "https://shaon-all-api-07mo.onrender.com/video/happy";
+         var  h = "https://noobs-apihouse.onrender.com/dipto/album/happy";
          else if ("15" == a.body)
-         var  h = "https://shaon-all-api-07mo.onrender.com/video/humaiyun";
+         var  h = "https://noobs-apihouse.onrender.com/dipto/album/humaiyun";
            else if ("16" == a.body)
          var  h =
 "https://shaon-all-api-07mo.onrender.com/video/sex";
