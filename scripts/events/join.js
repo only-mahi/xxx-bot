@@ -48,7 +48,7 @@ module.exports.run = async function({ api, event, Users }) {
   if (event.logMessageData.addedParticipants && Array.isArray(event.logMessageData.addedParticipants) && event.logMessageData.addedParticipants.some(i => i.userFbId == api.getCurrentUserID())) {
     //api.changeNickname(`𝗕𝗢𝗧 ${(!global.config.BOTNAME) ? "Buddy" : global.config.BOTNAME}`, threadID, api.getCurrentUserID());
 
-    let gifUrl = 'https://i.imgur.com/dw8sGpF.gif';
+    let gifUrl = 'https://i.imgur.com/Zobiscv.gif';
 let gifPath = __dirname + '/Nayan/join/join.gif';
 
 axios.get(gifUrl, { responseType: 'arraybuffer' })
@@ -68,7 +68,7 @@ DEVELOPER :𝐀𝐃𝐈 𝐔𝐅𝐓𝐀 𝐌𝐀𝐇𝐈
 
 🟣Facebook Account Link: 
 
-https://www.facebook.com/www.xnxx.com169
+https://www.facebook.com/mahitsuyiyi
 
 🔵WHATSAPP NUMBER: wa.me/+8801904157240
 
