@@ -17,4 +17,4 @@ module.exports.run = async function({ api, event, Users, Threads }) {
         var info = await Users.getData(author);
        return api.sendMessage({ body: `[WARN] - ${info.name} - bot change protection is enabled`}, threadID);
     }  
-}
+  }
