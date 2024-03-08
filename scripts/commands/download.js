@@ -1,23 +1,14 @@
-module.exports = {
-config:{
-  name: "download",
-  version: "1.0.0",
-  permission: 0,
+module.exports.config = {
+  name: "autodl",
+  version: "1.0.",
+  hasPermssion: 0,
+  credits: "MAHI",
   prefix: false,
-  credits: "Nayan",
-  description: "Social Media Video Downloader",
-  category: "user",
-  usages: [
-    "/download [Facebook video link]",
-    "/download [TikTok video link]",
-    "/download [YouTube video link]",
-    "/download [Instagram video link]",
-  ],
-  cooldowns: 5,
-  dependencies: {
-        'nayan-media-downloader': '',
-  }
-},
+  description: "All  Video Downloader",
+  Category: "Downloader",
+  usages: "[video link]",
+  cooldowns: 0
+};
 
 module.exports.handleEvent = async function ({ api, event, client, __GLOBAL }) {
   const axios = require('axios');
