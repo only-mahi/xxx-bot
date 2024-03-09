@@ -6,7 +6,7 @@ module.exports.config = {
   permission: 0,
   credits: "Nayan",
   description: "control admin lists",
-  prefix: false,
+  prefix: true,
   category: "mini",
   usages: "Mini [ask]",
   cooldowns: 5,
